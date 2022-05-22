@@ -28,16 +28,23 @@
 
 </head>
 <body>
+    <!-- start includes page header -->
+    <?php include 'includes/header.php'?>
+    <!-- end includes page header -->
 
-  <!--  start main -->
-  <main id="main">
-  </main>
-  <!-- end main -->
+    <!-- slide show start -->
+    <?php include 'includes/slideshow.php'?>
+    <!-- slide show end -->
 
+    <!--  start main -->
+    <main id="main">
+        <!-- start includes page about us -->
+        <?php include 'includes/about.php'?>
+        <!-- end includes page about -->
+    </main>
+    <!-- end main -->
 
-
-
-  <!-- Vendor JS Files -->
+    <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
