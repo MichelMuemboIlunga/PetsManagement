@@ -41,6 +41,14 @@
         <!-- start includes page about us -->
         <?php include 'includes/about.php'?>
         <!-- end includes page about -->
+
+        <!-- start image section -->
+        <?php include 'includes/jambotron.php' ?>
+        <!-- end image section -->
+
+        <!-- start services section -->
+        <?php include 'includes/services.php'?>
+        <!-- end services section -->
     </main>
     <!-- end main -->
 
