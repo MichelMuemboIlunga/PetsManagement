@@ -49,8 +49,32 @@
         <!-- start services section -->
         <?php include 'includes/services.php'?>
         <!-- end services section -->
+
+        <!-- start contact section -->
+        <?php include 'includes/contact.php'?>
+        <!-- end contact section -->
+
     </main>
     <!-- end main -->
+
+    <!-- start includes page footer -->
+    <?php include_once 'includes/footer.php' ?>
+    <!-- end includes page footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Start Cookie Section -->
+    <div class="cookie-container">
+        <p>
+            We use cookies in this website to give you the best experience on our
+            site and show you relevant ads. To find out more, read our
+            <a href="#">privacy policy</a> and <a href="#">cookie policy</a>.
+        </p>
+
+        <button class="cookie-btn">
+            Okay
+        </button>
+    </div>
+    <!-- End Cookie Section -->
 
     <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
