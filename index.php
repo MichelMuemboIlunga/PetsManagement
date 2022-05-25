@@ -50,6 +50,13 @@
         <?php include 'includes/services.php'?>
         <!-- end services section -->
 
+        <!-- Start testimonials section -->
+        <?php include 'includes/testimonials.php'?>
+        <!-- end testimonials section -->
+
+        <!-- Start Team section -->
+        <?php include 'includes/team.php'?>
+        <!-- end Team section -->
         <!-- start contact section -->
         <?php include 'includes/contact.php'?>
         <!-- end contact section -->
