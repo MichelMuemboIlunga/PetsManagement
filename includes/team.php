@@ -11,7 +11,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member" data-aos="fade-up">
                     <div class="member-img">
-                        <img src="assets/img/teamphotos/team1.jpeg" class="img-fluid" alt="">
+                        <img src="../assets/img/teamphotos/team1.jpeg" class="img-fluid" alt="">
                         <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>
@@ -29,7 +29,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member" data-aos="fade-up" data-aos-delay="100">
                     <div class="member-img">
-                        <img src="assets/img/teamphotos/team2.jpeg" class="img-fluid" alt="">
+                        <img src="../assets/img/teamphotos/team2.jpeg" class="img-fluid" alt="">
                         <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>
@@ -47,7 +47,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member" data-aos="fade-up" data-aos-delay="200">
                     <div class="member-img">
-                        <img src="assets/img/teamphotos/team3.jpeg" class="img-fluid" alt="">
+                        <img src="../assets/img/teamphotos/team3.jpeg" class="img-fluid" alt="">
                         <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>
@@ -65,7 +65,7 @@
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member" data-aos="fade-up" data-aos-delay="300">
                     <div class="member-img">
-                        <img src="assets/img/teamphotos/team4.jpeg" class="img-fluid" alt="">
+                        <img src="../assets/img/teamphotos/team4.jpeg" class="img-fluid" alt="">
                         <div class="social">
                             <a href=""><i class="bi bi-twitter"></i></a>
                             <a href=""><i class="bi bi-facebook"></i></a>

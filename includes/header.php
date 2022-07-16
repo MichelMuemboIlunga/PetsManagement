@@ -13,7 +13,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     <!-- style -->
-    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="../assets/css/index.css" rel="stylesheet">
 
     <script>
         $(document).ready(function(){
@@ -38,7 +38,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-            <h1><a href="index.php"><i class="fa fa-paw" aria-hidden="true"></i>
+            <h1><a href="../src/index.php"><i class="fa fa-paw" aria-hidden="true"></i>
                     Wisdom Pets</a></h1>
             <!-- For image logo-->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="logo" class="img-fluid"></a>-->

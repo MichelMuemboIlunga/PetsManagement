@@ -3,7 +3,7 @@
 
         <div class="row" data-aos="zoom-out">
             <div class="col-lg-9 text-center text-lg-start">
-                <img style="margin-left: auto; margin-right: auto; display: block;"src="assets/img/jambo/bello-dog.gif"/>
+                <img style="margin-left: auto; margin-right: auto; display: block;"src="../assets/img/jambo/bello-dog.gif"/>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
                 <h4 >

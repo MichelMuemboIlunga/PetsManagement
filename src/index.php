@@ -29,43 +29,43 @@
 </head>
 <body>
     <!-- start includes page header -->
-    <?php include 'includes/header.php' ?>
+    <?php include '../includes/header.php' ?>
     <!-- end includes page header -->
 
     <!-- slide show start -->
-    <?php include 'includes/slideshow.php' ?>
+    <?php include '../includes/slideshow.php' ?>
     <!-- slide show end -->
 
     <!--  start main -->
     <main id="main">
         <!-- start includes page about us -->
-        <?php include 'includes/about.php' ?>
+        <?php include '../includes/about.php' ?>
         <!-- end includes page about -->
 
         <!-- start image section -->
-        <?php include 'includes/jambotron.php' ?>
+        <?php include '../includes/jambotron.php' ?>
         <!-- end image section -->
 
         <!-- start services section -->
-        <?php include 'includes/services.php' ?>
+        <?php include '../includes/services.php' ?>
         <!-- end services section -->
 
         <!-- Start testimonials section -->
-        <?php include 'includes/testimonials.php' ?>
+        <?php include '../includes/testimonials.php' ?>
         <!-- end testimonials section -->
 
         <!-- Start Team section -->
-        <?php include 'includes/team.php' ?>
+        <?php include '../includes/team.php' ?>
         <!-- end Team section -->
         <!-- start contact section -->
-        <?php include 'includes/contact.php' ?>
+        <?php include '../includes/contact.php' ?>
         <!-- end contact section -->
 
     </main>
     <!-- end main -->
 
     <!-- start includes page footer -->
-    <?php include_once 'includes/footer.php' ?>
+    <?php include_once '../includes/footer.php' ?>
     <!-- end includes page footer -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
