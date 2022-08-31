@@ -1,3 +1,7 @@
+<?php
+require_once ('../controller/authLoginController.php');
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +9,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pets Management</title>
+    <link rel="icon" type="image/png" href="../assets/img/dog-paw.png">
+    <title>Wisdom Pets</title>
+
+
 
     <!-- Vendor CSS Files -->
     <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -17,79 +24,109 @@
     <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
     <!-- style -->
     <link href="../assets/css/index.css" rel="stylesheet">
+
 
     <!-- javascript -->
     <script src="../assets/js/main.js" defer></script>
 
+
+
     <!-- Font Awesome CSS -->
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
 
+
+
 </head>
 <body>
-    <!-- start includes page header -->
-    <?php include '../includes/header.php' ?>
-    <!-- end includes page header -->
+<!-- start includes page header -->
+<?php include '../includes/header.php' ?>
+<!-- end includes page header -->
 
-    <!-- slide show start -->
-    <?php include '../includes/slideshow.php' ?>
-    <!-- slide show end -->
 
-    <!--  start main -->
-    <main id="main">
-        <!-- start includes page about us -->
-        <?php include '../includes/about.php' ?>
-        <!-- end includes page about -->
 
-        <!-- start image section -->
-        <?php include '../includes/jambotron.php' ?>
-        <!-- end image section -->
+<!-- slide show start -->
+<?php include '../includes/slideshow.php' ?>
+<!-- slide show end -->
 
-        <!-- start services section -->
-        <?php include '../includes/services.php' ?>
-        <!-- end services section -->
 
-        <!-- Start testimonials section -->
-        <?php include '../includes/testimonials.php' ?>
-        <!-- end testimonials section -->
 
-        <!-- Start Team section -->
-        <?php include '../includes/team.php' ?>
-        <!-- end Team section -->
-        <!-- start contact section -->
-        <?php include '../includes/contact.php' ?>
-        <!-- end contact section -->
+<!--  start main -->
+<main id="main">
+    <!-- start includes page about us -->
+    <?php include '../includes/about.php' ?>
+    <!-- end includes page about -->
 
-    </main>
-    <!-- end main -->
 
-    <!-- start includes page footer -->
-    <?php include_once '../includes/footer.php' ?>
-    <!-- end includes page footer -->
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Start Cookie Section -->
-    <div class="cookie-container">
-        <p>
-            We use cookies in this website to give you the best experience on our
-            site and show you relevant ads. To find out more, read our
-            <a href="#">privacy policy</a> and <a href="#">cookie policy</a>.
-        </p>
+    <!-- start image section -->
+    <?php include '../includes/jambotron.php' ?>
+    <!-- end image section -->
 
-        <button class="cookie-btn">
-            Okay
-        </button>
-    </div>
-    <!-- End Cookie Section -->
 
-    <!-- Vendor JS Files -->
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- start services section -->
+    <?php include '../includes/services.php' ?>
+    <!-- end services section -->
+
+
+
+    <!-- Start testimonials section -->
+    <?php include '../includes/testimonials.php' ?>
+    <!-- end testimonials section -->
+
+
+
+    <!-- Start Team section -->
+    <?php include '../includes/team.php' ?>
+    <!-- end Team section -->
+    <!-- start contact section -->
+    <?php include '../includes/contact.php' ?>
+    <!-- end contact section -->
+
+
+
+</main>
+<!-- end main -->
+
+
+
+<!-- start includes page footer -->
+<?php include_once '../includes/footer.php' ?>
+<!-- end includes page footer -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+<!-- Start Cookie Section -->
+<div class="cookie-container">
+    <p>
+        We use cookies in this website to give you the best experience on our
+        site and show you relevant ads. To find out more, read our
+        <a href="#">privacy policy</a> and <a href="#">cookie policy</a>.
+    </p>
+
+
+
+    <button class="cookie-btn">
+        Okay
+    </button>
+</div>
+<!-- End Cookie Section -->
+
+
+
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
 
 
 </body>
