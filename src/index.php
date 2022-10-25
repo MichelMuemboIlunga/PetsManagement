@@ -74,7 +74,7 @@ require_once ('../controller/authLoginController.php');
 
 
     <!-- Start testimonials section -->
-    <?php include '../includes/testimonials.php' ?>
+    
     <!-- end testimonials section -->
 
 

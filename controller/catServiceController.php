@@ -1,61 +1,112 @@
 <?php
+	session_start();
+include '../config/db.php';
 
-session_start();
+	// Add products into the cart table
+	if (isset($_POST['pid'])) {
+	  $pid = $_POST['pid'];
+	  $pname = $_POST['pname'];
+	  $pprice = $_POST['pprice'];
+	  $pimage = $_POST['pimage'];
+	  $pcode = $_POST['pcode'];
+	  $pqty = $_POST['pqty'];
+	  $total_price = $pprice * $pqty;
 
-// creating connection to the database
+	  $stmt = $conn->prepare('SELECT code FROM tcart WHERE code=?');
+	  $stmt->bind_param('s',$pcode);
+	  $stmt->execute();
+	  $res = $stmt->get_result();
+	  $r = $res->fetch_assoc();
+	  $code = $r['code'] ?? '';
 
-$conn = mysqli_connect('localhost', 'root', '', 'PetManagement'); //TODO: Find a way to include connection file
-$status="";
+	  if (!$code) {
+	    $query = $conn->prepare('INSERT INTO tcart (productName, price, image,quantity,totalPrice,code) VALUES (?,?,?,?,?,?)');
+	    $query->bind_param('ssssss',$pname,$pprice,$pimage,$pqty,$total_price,$pcode);
+	    $query->execute();
 
+	    echo '<div class="alert alert-success alert-dismissible mt-2">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>Item added to your cart!</strong>
+						</div>';
+	  } else {
+	    echo '<div class="alert alert-danger alert-dismissible mt-2">
+						  <button type="button" class="close" data-dismiss="alert">&times;</button>
+						  <strong>Item already added to your cart!</strong>
+						</div>';
+	  }
+	}
 
-if(isset($_POST["add_to_cart"])) {
-    if (isset($_POST['code']) && $_POST['code'] != "") {
-        $code = $_POST['code'];
-        $result = mysqli_query($conn, "SELECT * FROM tCatsProduct WHERE code='$code'");
-        $row = mysqli_fetch_assoc($result);
-        $name = $row['productName'];
-        $code = $row['code'];
-        $price = $row['price'];
-        $image = $row['image'];
+	// Get no.of items available in the cart table
+	if (isset($_GET['cartItem']) && isset($_GET['cartItem']) == 'cart_item') {
+	  $stmt = $conn->prepare('SELECT * FROM tcart');
+	  $stmt->execute();
+	  $stmt->store_result();
+	  $rows = $stmt->num_rows;
 
-        $cartArray = array(
-            $code => array(
-                'name' => $name,
-                'code' => $code,
-                'price' => $price,
-                'quantity' => 1,
-                'image' => $image)
-        );
+	  echo $rows;
+	}
 
-        if (empty($_SESSION["shopping_cart"])) {
-            $_SESSION["shopping_cart"] = $cartArray;
-            $status = "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                          <strong>Great !</strong> Product successfully Added to your Cart.
-                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>";
-        } else {
-            $array_keys = array_keys($_SESSION["shopping_cart"]);
-            if (in_array($code, $array_keys)) {
-                $status = "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                          <strong>OOPS !</strong> Product Already Added to your Cart.
-                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>";
-            } else {
-                $_SESSION["shopping_cart"] = array_merge($_SESSION["shopping_cart"], $cartArray);
-                $status = "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                          <strong>Great !</strong> Product successfully Added to your Cart.
-                          <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                            <span aria-hidden='true'>&times;</span>
-                          </button>
-                        </div>";
-            }
+	// Remove single items from cart
+	if (isset($_GET['remove'])) {
+	  $id = $_GET['remove'];
 
-        }
-    }
-}
+	  $stmt = $conn->prepare('DELETE FROM tcart WHERE cardId=?');
+	  $stmt->bind_param('i',$id);
+	  $stmt->execute();
 
+	  $_SESSION['showAlert'] = 'block';
+	  $_SESSION['message'] = 'Item removed from the cart!';
+	  header('location:../includes/ServiceViews/cartdogs.php');
+	}
+
+	// Remove all items at once from cart
+	if (isset($_GET['clear'])) {
+	  $stmt = $conn->prepare('DELETE FROM tcart');
+	  $stmt->execute();
+	  $_SESSION['showAlert'] = 'block';
+	  $_SESSION['message'] = 'All Item removed from the cart!';
+	  header('location:../includes/ServiceViews/cartdogs.php');
+	}
+
+	// Set total price of the product in the cart table
+	if (isset($_POST['qty'])) {
+	  $qty = $_POST['qty'];
+	  $pid = $_POST['pid'];
+	  $pprice = $_POST['pprice'];
+
+	  $tprice = $qty * $pprice;
+
+	  $stmt = $conn->prepare('UPDATE tcart SET quantity=?, totalPrice=? WHERE cardId=?');
+	  $stmt->bind_param('isi',$qty,$tprice,$pid);
+	  $stmt->execute();
+	}
+
+	// Checkout and save customer info in the orders table
+	if (isset($_POST['action']) && isset($_POST['action']) == 'order') {
+	  $name = $_POST['name'];
+	  $email = $_POST['email'];
+	  $phone = $_POST['phone'];
+	  $products = $_POST['products'];
+	  $grand_total = $_POST['grand_total'];
+	  $address = $_POST['address'];
+	  $pmode = $_POST['pmode'];
+
+	  $data = '';
+
+	  $stmt = $conn->prepare('INSERT INTO torder (name,email,phone,address,pmode,products,amount_paid)VALUES(?,?,?,?,?,?,?)');
+	  $stmt->bind_param('sssssss',$name,$email,$phone,$address,$pmode,$products,$grand_total);
+	  $stmt->execute();
+	  $stmt2 = $conn->prepare('DELETE FROM tcart');
+	  $stmt2->execute();
+	  $data .= '<div class="text-center">
+								<h2 class="text-success">Great! Order Placed Successfully!</h2>
+								<h4 class="bg-success text-light rounded p-2">Items Purchased : ' . $products . '</h4>
+								<h4>Your Name : ' . $name . '</h4>
+								<h4>Your E-mail : ' . $email . '</h4>
+								<h4>Your Phone : ' . $phone . '</h4>
+								<h4>Total Amount Paid : ' . number_format($grand_total,2) . '</h4>
+								<h4>Payment Mode : ' . $pmode . '</h4>
+						  </div>';
+	  echo $data;
+	}
 ?>
