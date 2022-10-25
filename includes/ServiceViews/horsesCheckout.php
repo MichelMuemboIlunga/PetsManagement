@@ -43,7 +43,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="dogs.php">Products</a>
+          <a class="nav-link active" href="horses.php">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../petSelling.php">Categories</a>
